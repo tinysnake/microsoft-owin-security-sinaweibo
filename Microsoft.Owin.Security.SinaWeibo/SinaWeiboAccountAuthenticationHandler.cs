@@ -15,15 +15,13 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.Infrastructure;
-using Newtonsoft.Json.Linq;
 using Microsoft.Owin.Security.SinaWeibo.Provider;
-using System.Security.Claims;
+using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Owin.Security.SinaWeibo
 {

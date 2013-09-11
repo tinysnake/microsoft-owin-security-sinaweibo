@@ -14,17 +14,13 @@
  *  limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Owin.Logging;
-using Microsoft.Owin.Security.Infrastructure;
-using Owin;
-using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.DataHandler;
+using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.SinaWeibo.Provider;
+using Owin;
 
 namespace Microsoft.Owin.Security.SinaWeibo
 {

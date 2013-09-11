@@ -16,7 +16,6 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.SinaWeibo.Provider;
 
 namespace Microsoft.Owin.Security.SinaWeibo
