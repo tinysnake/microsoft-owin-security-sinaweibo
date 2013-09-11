@@ -27,7 +27,7 @@ using System.Security.Claims;
 
 namespace Microsoft.Owin.Security.SinaWeibo
 {
-    public class SinaWeiboAccountAuthenticationHandler : AuthenticationHandler<SinaWeiboAccountAuthenticationOptions>
+    internal class SinaWeiboAccountAuthenticationHandler : AuthenticationHandler<SinaWeiboAccountAuthenticationOptions>
     {
         private const string XmlSchemaString = "http://www.w3.org/2001/XMLSchema#string";
         private const string TokenEndpoint = "https://api.weibo.com/oauth2/access_token";
