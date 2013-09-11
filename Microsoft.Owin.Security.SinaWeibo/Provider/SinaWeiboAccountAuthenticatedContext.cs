@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Security.Claims;
-/*
+﻿/*
  *  Copyright 2013 Feifan Tang. All rights reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +15,9 @@ using System.Security.Claims;
  */
 using Microsoft.Owin.Security.Provider;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Security.Claims;
+
 
 namespace Microsoft.Owin.Security.SinaWeibo.Provider
 {

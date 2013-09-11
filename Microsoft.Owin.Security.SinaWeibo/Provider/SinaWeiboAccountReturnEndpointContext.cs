@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-/*
+﻿/*
  *  Copyright 2013 Feifan Tang. All rights reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +14,7 @@
  *  limitations under the License.
  */
 using Microsoft.Owin.Security.Provider;
+using System.Collections.Generic;
 
 namespace Microsoft.Owin.Security.SinaWeibo.Provider
 {
