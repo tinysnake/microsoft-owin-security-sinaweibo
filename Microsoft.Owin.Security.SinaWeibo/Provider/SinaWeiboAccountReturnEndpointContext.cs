@@ -22,9 +22,8 @@ namespace Microsoft.Owin.Security.SinaWeibo.Provider
     {
         public SinaWeiboAccountReturnEndpointContext(
             IOwinContext context,
-            AuthenticationTicket ticket,
-            IDictionary<string, string> errorDetails)
-            : base(context, ticket, errorDetails)
+            AuthenticationTicket ticket)
+            : base(context, ticket)
         {
         }
     }

@@ -44,7 +44,7 @@ namespace Microsoft.Owin.Security.SinaWeibo
         public override async Task<bool> InvokeAsync()
         {
             if (Options.ReturnEndpointPath != null &&
-                String.Equals(Options.ReturnEndpointPath, Request.Path, StringComparison.OrdinalIgnoreCase))
+                String.Equals(Options.ReturnEndpointPath, Request.Path.Value, StringComparison.OrdinalIgnoreCase))
             {
                 return await InvokeReturnPathAsync();
             }
@@ -57,10 +57,10 @@ namespace Microsoft.Owin.Security.SinaWeibo
 
             var model = await AuthenticateAsync();
 
-            var context = new SinaWeiboAccountReturnEndpointContext(Context, model, ErrorDetails);
+            var context = new SinaWeiboAccountReturnEndpointContext(Context, model);
             context.SignInAsAuthenticationType = Options.SignInAsAuthenticationType;
-            context.RedirectUri = model.Properties.RedirectUrl;
-            model.Properties.RedirectUrl = null;
+            context.RedirectUri = model.Properties.RedirectUri;
+            model.Properties.RedirectUri = null;
 
             await Options.Provider.ReturnEndpoint(context);
 
@@ -200,7 +200,7 @@ namespace Microsoft.Owin.Security.SinaWeibo
             if (challenge != null)
             {
                 string requestPrefix = Request.Scheme + "://" + Request.Host;
-                string currentQueryString = Request.QueryString;
+                string currentQueryString = Request.QueryString.Value;
                 string currentUri = string.IsNullOrEmpty(currentQueryString)
                     ? requestPrefix + Request.PathBase + Request.Path
                     : requestPrefix + Request.PathBase + Request.Path + "?" + currentQueryString;
@@ -209,9 +209,9 @@ namespace Microsoft.Owin.Security.SinaWeibo
 
                 AuthenticationProperties properties = challenge.Properties;
 
-                if (string.IsNullOrEmpty(properties.RedirectUrl))
+                if (string.IsNullOrEmpty(properties.RedirectUri))
                 {
-                    properties.RedirectUrl = currentUri;
+                    properties.RedirectUri = currentUri;
                 }
 
                 // OAuth2 10.12 CSRF
